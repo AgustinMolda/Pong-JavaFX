@@ -114,7 +114,9 @@ public class HelloApplication extends Application {
         }
 
         //increse the ball speed
-        if()
+        if((ballXPos + BALL_R > playerTwoXPos) && ballYPos >= playerTwoYPos && ballYPos <= playerTwoYPos +  PLAYER_HEIGHT){
+
+        }
     }
 
     public static void main(String[] args) {
