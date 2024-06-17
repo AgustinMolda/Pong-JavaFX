@@ -114,7 +114,7 @@ public class HelloApplication extends Application {
         }
 
         //increse the ball speed
-
+        if()
     }
 
     public static void main(String[] args) {
