@@ -114,10 +114,23 @@ public class HelloApplication extends Application {
         }
 
         //increse the ball speed
-        if((ballXPos + BALL_R > playerTwoXPos) && ballYPos >= playerTwoYPos && ballYPos <= playerTwoYPos +  PLAYER_HEIGHT){
+        if( ((ballXPos + BALL_R > playerTwoXPos) && ballYPos >= playerTwoYPos && ballYPos <= playerTwoYPos + PLAYER_HEIGHT) ||
+                ((ballXPos < playerOneXPos + PLAYER_WIDTH) && ballYPos >= playerOneYPos && ballYPos <= playerOneYPos + PLAYER_HEIGHT)){
+                ballYSpeed+= 1 * Math.signum(ballYSpeed);
+                ballXSpeed += 1 * Math.signum(ballXSpeed);
+                ballXSpeed*= -1;
+                ballYSpeed*= -1;
 
         }
+
+        //drawScore
+        gc.fillText(scoreP1 + "\t\t\t\t\t\t\t\t" + scoreP2, width/2,100);
+        //draw player 1 & 2
+        gc.fillRect(playerTwoXPos,playerTwoYPos,PLAYER_WIDTH,PLAYER_HEIGHT);
+        gc.fillRect(playerOneXPos,playerOneYPos,PLAYER_WIDTH,PLAYER_HEIGHT);
     }
+
+
 
     public static void main(String[] args) {
         launch();
